@@ -8,7 +8,9 @@ starTrek.push('McCoy');
 starTrek.push('Scotty');
 
 const peek = stack => {
-  if(stack.top === null){return null;}
+  if(stack.top === null){
+    return null;
+  }
   return stack.top.data;
 };
 
@@ -28,24 +30,24 @@ starTrek.pop();
 starTrek.pop();
 
 
-function is_palindrome(s) {
+function palindrome(s) {
   s = s.toLowerCase().replace(/[^a-zA-Z0-9]/g, '');
   const chars = new Stack();
   for(let i = 0; i < s.length; i++){
     chars.push(s[i]);
   }
 
-  let palandrome = true;
+  let palindrome = true;
   let i = 0;
   while(chars.top !== null){
     const char = chars.pop();
     if(char !== s[i]){
-      palandrome = false;
+      palindrome = false;
       break; 
     }
     i++;
   }
-  return palandrome;
+  return palindrome;
 }
 
 const sort = stack => {
